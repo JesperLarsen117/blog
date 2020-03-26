@@ -1,0 +1,12 @@
+<h1 class="site_title">Blog</h1>
+<div class="menu">
+  <ul class="blog_list">
+    <li class="blog_item" *ngFor="let product of products">
+      <a href="blog/{{ product.sys.id }}" class="blog_text"> {{ product.fields.title }}</a>
+    </li>
+  </ul>
+</div>
+<div class="content">
+
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,23 @@
+.article {
+    &_content {
+        margin: 1em 0;
+    }
+
+    &_img {
+        margin: 1em 0;
+        width: 100%;
+        min-height: 200px;
+        max-height: 400px;
+        object-fit: cover;
+    }
+
+    &_author {
+        margin-right: .5em;
+        display: inline-block;
+    }
+
+    &_date {
+        display: inline-block;
+        text-transform: capitalize;
+    }
+}

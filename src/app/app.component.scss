@@ -1,0 +1,26 @@
+.site_title {
+    text-align: center;
+    margin: 1em;
+}
+
+.menu {
+    position: absolute;
+    right: 0;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+
+    .blog {
+        &_list {}
+
+        &_text {}
+
+        &_item {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 160px;
+            height: 1.2em;
+            white-space: nowrap;
+        }
+    }
+}

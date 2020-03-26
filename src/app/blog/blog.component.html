@@ -1,0 +1,9 @@
+<div class="content" *ngFor="let product of products">
+    <div class="article" *ngIf="product.sys.id === id">
+        <h2 clasS="article_title">{{ product.fields.title }}</h2>
+        <img class="article_img" src="http:{{product.fields.image.fields.file.url}}" alt="image">
+        <p clasS="article_author">Af {{ product.fields.author }}</p>
+        <p clasS="article_date">{{_returnCreatedDate(product.fields.date)}}</p>
+        <div class="article_content" [innerHtml]="_returnHtmlFromRichText(product.fields.content)"></div>
+    </div>
+</div>
