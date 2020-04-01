@@ -9,7 +9,7 @@ import { createClient, Entry } from 'contentful';
 export class ContentfulService {
   CONFIG = {
     space: '88lbbvk6lpib',
-    accessToken: 'YtFE3wwwmJ5K8o3mfU4KjhWOrjuRJhKS7bo6jo5lKTQ',
+    accessToken: 'CONTENTFUL_KEY',
   };
 
   private cdaClient = createClient({
