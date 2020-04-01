@@ -1,23 +1,84 @@
+.site_title {
+    text-align: center;
+    margin: 1em;
+
+    a {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+    }
+}
+
+.menu {
+    position: absolute;
+    right: 0;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        margin: 0 0 1em 0;
+    }
+
+    li {
+        margin: 0.5em 0;
+    }
+
+    .blog {
+        &_list {}
+
+        &_text {}
+
+        &_item {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 160px;
+            height: 1.2em;
+            white-space: nowrap;
+        }
+    }
+}
+
+
 .article {
-    &_content {
-        margin: 1em 0;
+    // padding: 1em;
+    margin: 0 auto 2em auto;
+    background-color: white;
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+
+    &_header {
+        position: relative;
+    }
+
+    &_title {
+        position: absolute;
+        color: white;
+        padding: 1em;
+        bottom: 0;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
     }
 
     &_img {
-        margin: 1em 0;
+        // margin: 1em 0;
         width: 100%;
-        min-height: 200px;
-        max-height: 400px;
+        height: 400px;
         object-fit: cover;
     }
 
     &_author {
+        padding: .5em .5em .5em 1em;
         margin-right: .5em;
         display: inline-block;
+        opacity: .8;
     }
 
     &_date {
         display: inline-block;
         text-transform: capitalize;
+        opacity: .8;
+    }
+
+    &_content {
+        padding: 1em;
     }
 }

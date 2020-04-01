@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Entry } from 'contentful';
+import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 import { ContentfulService } from '../contentful.service';
@@ -23,15 +24,21 @@ export class BlogComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
 
-    console.log(this.id);
-
     this.contentfulService.getProducts()
       .then(products => this.products = products);
   }
   _returnHtmlFromRichText(richText) {
+    const breaks = document.querySelectorAll('.article_content p') as unknown as HTMLCollectionOf<HTMLElement>;
+    console.log(Array.from(breaks));
+    for (const item of Array.from(breaks)) {
+      item.style.marginBottom = '2em';
+    }
+
     if (richText === undefined || richText === null || richText.nodeType !== 'document') {
       return '<p>Error</p>';
     }
+
+
     return documentToHtmlString(richText);
   }
 

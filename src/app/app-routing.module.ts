@@ -1,11 +1,13 @@
+import { FrontComponent } from './front/front.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BlogComponent } from './blog/blog.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
-  { path: 'blog/:id', component: BlogComponent }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: FrontComponent, pathMatch: 'full' },
+  { path: 'blog/:id', component: BlogComponent, pathMatch: 'full' }
 ];
 
 @NgModule({

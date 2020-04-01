@@ -1,0 +1,18 @@
+<h1 class="site_title"> <a href="/">Blog</a> </h1>
+<div class="menu">
+    <h2>5 Nyeste opslag</h2>
+    <ul class="blog_list">
+        <li class="blog_item" *ngFor="let product of products | slice:0:5; let i=index">
+            <a href="blog/{{ product.sys.id }}" class="blog_text"> {{ product.fields.title }}</a>
+        </li>
+    </ul>
+</div>
+<div class="content preview_article" *ngFor="let product of products;let i = index">
+    <h2 clasS="article_title">{{ product.fields.title }}</h2>
+    <img class="article_img" src="http:{{product.fields.image.fields.file.url}}" alt="image">
+    <p clasS="article_author">Af {{ product.fields.author }}</p>
+    <p clasS="article_date">{{_returnCreatedDate(product.fields.date)}}</p>
+    <p>{{product.fields.previewText}}</p>
+    <a class="readMore" href="blog/{{ product.sys.id }}">Læs mere</a>
+</div>
+<router-outlet></router-outlet>
